@@ -68,7 +68,7 @@ userRouter.get('/getProfile',auth,async(req,res)=>{
         
     }
 })
-userRouter.patch("/update/:id",auth,async(req,res)=>{
+userRouter.patch("/update/:id",async(req,res)=>{
     try {
         let id = req.params.id;
         let data = await Usermodel.findOne({_id:id});
