@@ -75,8 +75,8 @@ userRouter.patch("/update/:id",async(req,res)=>{
        
       
             await Usermodel.findByIdAndUpdate({_id:id},req.body);
-            
-            res.send("user has been updated")
+            let data_2 = await Usermodel.findById(id);
+            res.send({message:"profile updated",data_2});
        
        
         
